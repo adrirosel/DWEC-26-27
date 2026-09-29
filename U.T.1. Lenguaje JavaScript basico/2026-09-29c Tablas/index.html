@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tablas con HTML</h1>
+
+    <h2>La tabla hecha con HTML</h2>
+
+    <table border="1">
+        <tr>
+            <th>País</th>
+            <th>Código</th>
+        </tr>
+
+        <tr>
+            <td>España</td>
+            <td>ES</td>
+        </tr>
+
+        <tr>
+            <td>Francia</td>
+            <td>FR</td>
+        </tr>
+    </table>
+
+    <h2>La misma tabla hecha con JavaScript</h2>
+
+    <table id="tablaPaises"></table>
+
+    <script>
+        const tabla = document.getElementById("tablaPaises")
+        tabla.setAttribute("border", "1")
+
+        const tr1 = document.createElement('tr')
+        tabla.appendChild(tr1)
+
+        const th1 = document.createElement('th')
+        th1.textContent = 'País'
+        const th2 = document.createElement('th')
+        th2.textContent = 'Código'
+
+        tr1.appendChild(th1)
+        tr1.appendChild(th2)
+        //Cuepro tabla
+        const tr2 = document.createElement('tr')
+        tabla.appendChild(tr2)
+
+        const td1 = document.createElement('td')
+        td1.textContent = 'España'
+        tr2.appendChild(td1)
+
+        const td2 = document.createElement('td')
+        td2.textContent = 'ES'
+        tr2.appendChild(td2)
+
+        const tr3 = document.createElement('tr')
+        tabla.appendChild(tr3)
+
+        const td3 = document.createElement('td')
+        td3.textContent = 'Francia'
+        tr3.appendChild(td3)
+        
+        const td4 = document.createElement('td')
+        td4.textContent = 'FR' 
+        tr3.appendChild(td4)
+    </script>
+</body>
+</html>
