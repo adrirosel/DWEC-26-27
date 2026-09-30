@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
     <script type="module">
         import {ciudades} from './ciudades.js'
-
         const nSct = document.getElementById('eSct')
-        for(let ciudad of ciudades){
+
+        for (let ciudad of ciudades) {
+
             const nInp = document.createElement('input')
             nSct.appendChild(nInp)
-            
+
             nInp.setAttribute('type', 'checkbox')
             nInp.setAttribute('name', `${ciudad.nombre}`)
             nInp.setAttribute('id', `eChk${ciudad.nombre}`)
 
             const nLabl = document.createElement('label')
             nSct.appendChild(nLabl)
+            nLabl.classList.add('label')
             nLabl.setAttribute('for', `eChk${ciudad.nombre}`)
             nLabl.textContent = `${ciudad.nombre}`
+
+            const nBr = document.createElement('br')
+            nSct.appendChild(nBr)
         }
 
 

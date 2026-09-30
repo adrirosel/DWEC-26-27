@@ -1,4 +1,4 @@
-const ciudades = [
+export const ciudades = [
   {
     "nombre": "Abanilla",
     "codigoPostal": "30640",
