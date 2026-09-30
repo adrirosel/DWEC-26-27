@@ -4,14 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./empleados.js"></script>
+
+    <style>
+        table, tr, th, td {
+            border: 2px solid;
+            border-collapse: collapse;
+        }
+
+        tbody tr:nth-child(2n){
+            background-color: aqua;
+        }
+        tbody tr:nth-child(2n+1){
+            background-color: gold;
+        }        
+    </style>
+
+    <script type="module">
+        import {empleados} from './empleados.js';
+        console.log(empleados.length);
+
+        const nTbody = document.getElementById("eTbdEmpleados")
+        for(let i in empleados){
+
+            const nTr = document.createElement('tr')
+            nTbody.appendChild(nTr)
+            nTr.setAttribute('data-empleado', 0)
+            
+            const nTd = document.createElement('td')
+            nTr.appendChild(nTd)
+
+            nTd.textContent = parseInt(i)+1
+
+            const nTd2 = document.createElement('td')
+            nTr.appendChild(nTd2)
+
+            nTd2.textContent = `${empleados[i].nombre} ${empleados[i].apellido}`
+
+            const nTd3 = document.createElement('td')
+            nTr.appendChild(nTd3)
+
+            nTd3.textContent = `${empleados[i].categoria}`
+        }
+
+    </script>
 </head>
 <body>
     <h1>Mostrar tabla empleados</h1>
     
-    <table id="tablaEmpleados"></table>
-    <script type="module">
-        import {empleados} from './empleados.js'
-    </script>
+    <table>
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody id="eTbdEmpleados">
+            <!-- <tr>
+                <td>1</td>
+                <td>Serena Mcmillan</td>
+                <td>Informatico</td>
+            </tr> -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Numero</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
