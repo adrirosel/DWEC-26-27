@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {ciudades} from './ciudades.js'
+
+        const nSct = document.getElementById('eSct')
+        for(let ciudad of ciudades){
+            const nInp = document.createElement('input')
+            nSct.appendChild(nInp)
+            
+            nInp.setAttribute('type', 'checkbox')
+            nInp.setAttribute('name', `${ciudad.nombre}`)
+            nInp.setAttribute('id', `eChk${ciudad.nombre}`)
+
+            const nLabl = document.createElement('label')
+            nSct.appendChild(nLabl)
+            nLabl.setAttribute('for', `eChk${ciudad.nombre}`)
+            nLabl.textContent = `${ciudad.nombre}`
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>Ciudades de Murcia</h1>
+
+    <section id="eSct">
+        <!-- <input type="checkbox" name="lorca" id="eChkLorca">
+        <label for="eChkLorca">Lorca</label>
+
+        <input type="checkbox" name="aguilas" id="eChkaguilas">
+        <label for="eChkaguilas">Águilas</label> -->
+    </section>
+</body>
+</html>
