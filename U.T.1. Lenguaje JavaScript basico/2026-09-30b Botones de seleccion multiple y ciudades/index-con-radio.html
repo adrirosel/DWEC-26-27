@@ -13,10 +13,13 @@
             const nInp = document.createElement('input')
             nSct.appendChild(nInp)
 
-            nInp.setAttribute('type', 'checkbox')
-            nInp.setAttribute('name', `${ciudad.codigoPostal}`)
+            nInp.setAttribute('type', 'radio')
+            nInp.setAttribute('name', 'ciudad')
             nInp.setAttribute('id', `eChk${ciudad.codigoPostal}`)
-            nInp.setAttribute('value', ciudad.nombre)
+            nInp.setAttribute('value', ciudad.codigoPostal)
+            if(ciudad.codigoPostal === "30800"){
+                nInp.setAttribute('checked', '')
+            }
 
 
             const nLabl = document.createElement('label')
