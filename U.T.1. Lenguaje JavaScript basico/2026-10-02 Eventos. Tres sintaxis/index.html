@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+  </head>
+  <body>
+    <p onclick="alert('Has cliqueado en el párrafo 1')">Este es el parrafo 1</p>
+    <p onclick="prompt('Has cliqueado en el párrafo 2')">
+      Este es el parrafo 2
+    </p>
+    <p onmouseover="f()">Este es el párrafo 3</p>
+
+    <p
+      onmouseover="console.warn('Has entrado en el párrafo 4')"
+      onmouseout="console.error('Has salido del párrafo 4')"
+    >
+      Este es el párrafo 4
+    </p>
+
+    <p id="ePar5">Este es el párrafo 5</p>
+
+    <script>
+      const f = function mostrarMensajeParrafo3() {
+        console.log("Has entrado en el párrafo 3.");
+      };
+      
+      const g = function mostrarMensajeParrafo5() {
+        console.log("Has entrado en el párrafo 5.");
+      };
+
+      const nParrafo5 = document.getElementById('ePar5')
+      nParrafo5.onclick = g
+
+    </script>
+  </body>
+</html>
