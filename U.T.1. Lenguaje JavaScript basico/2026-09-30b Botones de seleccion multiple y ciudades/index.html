@@ -14,13 +14,12 @@
             nSct.appendChild(nInp)
 
             nInp.setAttribute('type', 'checkbox')
-            nInp.setAttribute('name', `${ciudad.nombre}`)
-            nInp.setAttribute('id', `eChk${ciudad.nombre}`)
+            nInp.setAttribute('name', `${ciudad.codigoPostal}`)
+            nInp.setAttribute('id', `eChk${ciudad.codigoPostal}`)
 
             const nLabl = document.createElement('label')
             nSct.appendChild(nLabl)
-            nLabl.classList.add('label')
-            nLabl.setAttribute('for', `eChk${ciudad.nombre}`)
+            nLabl.setAttribute('for', `eChk${ciudad.codigoPostal}`)
             nLabl.textContent = `${ciudad.nombre}`
 
             const nBr = document.createElement('br')
