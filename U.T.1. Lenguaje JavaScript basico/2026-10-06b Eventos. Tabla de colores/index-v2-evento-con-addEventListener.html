@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td data-color="rojo" id='eTdRojo' style="background-color: red;" >rojo</td>
+            <td data-color="verde" id='eTdVerde' style="background-color: green;" ">verde</td>
+            <td data-color="azul" id='eTdAzul' style="background-color: blue;" >azul</td>
+        </tr>
+        <tr>
+            <td data-color="celeste" id='eTdCeleste' style="background-color: cyan;" >celeste</td>
+            <td data-color="purpura" id='eTdPurpura' style="background-color: magenta;" >purpura</td>
+            <td data-color="amarillo" id='eTdAmarillo' style="background-color: yellow;" >amarillo</td>
+        </tr>    
+    </table>
+
+    <script>
+        document.getElementById('eTdRojo').addEventListener('click', mostrarColor)
+        document.getElementById('eTdVerde').addEventListener('click', mostrarColor)
+        document.getElementById('eTdAzul').addEventListener('click', mostrarColor)
+        document.getElementById('eTdCeleste').addEventListener('click', mostrarColor)
+        document.getElementById('eTdPurpura').addEventListener('click', mostrarColor)
+        document.getElementById('eTdAmarillo').addEventListener('click', mostrarColor)
+
+        function mostrarColor(e){
+            console.log(e.target, e.target.getAttribute('data-color'))
+
+            console.log(e.target.dataset.color)//Otra forma de sacar atributos (data- unicamente)
+        }
+    </script>
+</body>
+</html>
