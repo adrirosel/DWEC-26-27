@@ -29,14 +29,17 @@ function configurarEmpleadoCambiado(empleados){
 }
 
 function llenarDetalleEmpleado(e){
-    const dni = parseInt(e.target.value);
+    const dniEmpleado = parseInt(e.target.value);
 
-    const empleado = empleados.find(empleado => empleado.dni === dni);
+    const {nombre, apellido, edad, categoria, salarioBruto: salario} = empleados.find(({dni}) => dni === dniEmpleado);
 
-    document.getElementById('eTxtNombre').setAttribute('value', empleado.nombre );
-    document.getElementById('eTxtApellido').setAttribute('value', empleado.apellido);
-    document.getElementById('eTxtEdad').setAttribute('value', empleado.edad);
-    document.getElementById('eTxtCategoria').setAttribute('value', empleado.categoria);
-    document.getElementById('eTxtSalario').setAttribute('value', empleado.salarioBruto);
+    document.getElementById('eTxtNombre').setAttribute('value', nombre );
+    document.getElementById('eTxtApellido').setAttribute('value', apellido);
+    document.getElementById('eTxtEdad').setAttribute('value', edad);
+    document.getElementById('eTxtCategoria').value = categoria
+    document.getElementById('eTxtSalario').value = salario
+
+    
+
 }
 
