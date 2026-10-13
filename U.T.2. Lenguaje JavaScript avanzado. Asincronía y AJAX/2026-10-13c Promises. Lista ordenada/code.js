@@ -7,5 +7,8 @@ const nOl = document.getElementById('eOlPokemons')
 for(let result of results){
     const nLi = document.createElement('li')
     nOl.appendChild(nLi)
-    nLi.textContent = result.name
+    const nA = document.createElement('a')
+    nLi.appendChild(nA)
+    nA.setAttribute('href', result.url)
+    nA.textContent = result.name
 }
