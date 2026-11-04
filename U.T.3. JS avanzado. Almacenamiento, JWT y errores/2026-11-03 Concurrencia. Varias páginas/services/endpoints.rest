@@ -1,1 +1,1 @@
-GET https://dummyjson.com/products/categories
+GET https://dummyjson.com/products/1

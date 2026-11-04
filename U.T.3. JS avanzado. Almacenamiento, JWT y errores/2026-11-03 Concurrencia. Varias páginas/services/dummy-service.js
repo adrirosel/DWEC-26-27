@@ -24,13 +24,14 @@ export class DummyService {
       const url = DummyService.BASE_URL + "categories";
       const res = await fetch(url);
       const data = await res.json();
-      if (!data.ok) {
-        throw new Error(error.message);
+      if (!res.ok) {
+        throw new Error(res.statusText);
       }
 
       const categories = data.map(
         ({ slug, name }) => new CategoryModel(slug, name),
       );
+      return categories;
     } catch (error) {
       throw new DummyServiceError(
         "No puedo recuperar las categorías",
@@ -38,7 +39,6 @@ export class DummyService {
         "getCategories",
       );
     }
-    return categories;
   }
 }
 
