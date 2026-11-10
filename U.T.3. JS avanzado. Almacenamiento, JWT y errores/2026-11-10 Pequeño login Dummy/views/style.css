@@ -1,0 +1,117 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --color-red-50: #FFEBEE;
+    --color-red-100: #FFCDD2;
+    --color-red-200: #EF9A9A;
+    --color-red-300: #E57373;
+    --color-red-400: #EF5350;
+    --color-red-500: #F44336;
+    --color-red-600: #E53935;
+    --color-red-700: #D32F2F;
+    --color-red-800: #C62828;
+    --color-red-900: #B71C1C;
+
+    /* Colores Semánticos de Estado */
+    --color-success: #16A34A;       /* Éxito, validación positiva */
+    --color-warning: #D97706;       /* Advertencia, precaución */
+    --color-error: #DC2626;         /* Error, validación negativa, peligro */
+    --color-info: #0891B2;          /* Información general, datos */
+
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--color-red-50);
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--color-red-900);
+    color: var(--color-red-50);
+    padding: 0.25rem 1rem;
+    outline: none;
+
+}
+
+.main-app{
+    flex: 1 1 0;
+    position: relative;
+}
+
+.main-app:has(.form-login) {
+    place-content: center;
+    align-self: center;
+}
+
+.form-login {
+    background-color: var(--color-red-100);
+    font-size: 1.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+
+    header {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    input[type=text], input[type=password], button[type=button] {
+        font-size: inherit;
+        width: 100%;
+        align-self: center;
+
+        &::selection{
+            background-color: var(--color-red-800);
+            color:yellow;
+        }
+    }
+}
+
+@media (width >= 768px) {
+    .form-login {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+    }
+
+    header {
+        grid-column: span 2;
+    }
+
+    .btn {
+        grid-column: span 2;
+        width: fit-content !important;
+        justify-self: center;
+    }
+}
+
+.header-app {
+    display: flex;
+    background-color: var(--color-red-900);
+    color: white;
+    .title-app {
+        flex: 1 1 0;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        padding: 0.15em;
+    }
+
+    .button-login {
+        background-color: var(--color-red-200);
+        border-radius: 50%;
+        height: 2em;
+        aspect-ratio: 1;
+    }
+}
